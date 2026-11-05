@@ -32,7 +32,7 @@ T đổ Sting vào tẩy (cầm tẩy đá + có chai Sting) · H hút thuốc l
 Repo đã có sẵn `render.yaml` (Blueprint) nên chỉ cần vài bước:
 1. Tạo repo trên GitHub rồi đẩy code lên (xem lệnh bên dưới).
 2. Vào https://dashboard.render.com → **New** → **Blueprint** → chọn repo → **Apply**. (Hoặc **New → Web Service**, chọn repo.)
-3. Nếu làm thủ công, điền: Runtime **Node**, Build `npm ci`, Start `npm start`, Plan **Free**, Region **Singapore**.
+3. Nếu làm thủ công, điền: Runtime **Node**, Build `npm ci`, Start `bash start.sh` (hoặc `npm start`), Plan **Free**, Region **Singapore**.
 4. (Tuỳ chọn) Vào **Environment** thêm biến `CODE=abc123` nếu muốn chỉ nhóm mình vào được (nhập mã ở màn hình vào quán).
 5. Deploy xong mở link `https://ten-quan.onrender.com`, gửi vào nhóm Zalo. Client tự dùng `wss://` khi trang là https, không phải sửa gì.
 
@@ -41,6 +41,7 @@ Lưu ý khi dùng gói Free:
 - Chỉ để **1 instance** (đừng bật scaling) vì người chơi và WebSocket nằm trong bộ nhớ của một tiến trình.
 - Muốn quán luôn mở: nâng lên gói Starter, hoặc dùng một cron bên ngoài ping `https://ten-quan.onrender.com/healthz` mỗi 10 phút.
 - Server đã đọc cổng từ `process.env.PORT` nên Render tự gán cổng, không cần cấu hình gì thêm.
+- `start.sh` là script khởi động dùng trên Render (`bash start.sh`): tự cài thư viện nếu thiếu rồi chạy `node server.js`.
 
 Lệnh đẩy code lên GitHub (chạy trong thư mục này):
 ```
