@@ -1,0 +1,16 @@
+{
+  "name": "cafe-via-he",
+  "version": "1.0.0",
+  "description": "Game nhiều người: Cà phê Vỉa Hè (phố cổ Hà Nội)",
+  "main": "server.js",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

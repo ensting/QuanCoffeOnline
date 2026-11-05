@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: cafe-via-he
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: CODE
+        sync: false
